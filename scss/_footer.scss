@@ -1,0 +1,46 @@
+.footer {
+    min-height: 85px;
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 10px $minPadding; 
+        background-color: #383838;
+
+        @media only screen and (min-width: $md) {
+            padding: 18px $minPadding;
+        }
+    }
+
+    &__icon {
+        flex: 0 0 44px;
+        height: 49px;
+        margin-right: 13px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-image: url("../icons/footer_icon.svg");
+    }
+
+    &__text {
+        flex: 0 1 auto;
+    }
+
+    &__title {
+        margin-bottom: 5px;
+        line-height: 16px;
+        font-family: rawline;
+        font-size: 14px;
+        font-weight: 400;
+        color: #CFCFCF;
+    }
+
+    &__copyright {
+        line-height: 20px;
+        font-family: montserrat;
+        font-size: 14px;
+        font-weight: 400;
+        color: #9E9E9E;
+    }
+}

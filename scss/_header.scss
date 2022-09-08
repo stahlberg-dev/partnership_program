@@ -1,0 +1,141 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 10px;
+
+    &__wrapper {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        border: 1px solid #F4F4F4;
+        background: #FFF;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.04);
+    }
+
+    &__container {
+    }
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 10px $minPadding;
+        min-height: 60px;
+
+        @media only screen and (min-width: $sm) {
+            align-items: flex-start;
+        }
+
+        @media only screen and (min-width: $md) {
+            min-height: 120px;
+            align-items: center;
+            padding: 10px 0;
+
+            .header_scroll & {
+                min-height: 80px;
+            }
+        }
+        transition: min-height 0.3s ease 0s;
+    }
+
+    &__logo {
+        flex: 0 0 120px;
+        height: 36px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        background-image: url("../img/logo.svg");
+        transition: height 0.3s ease 0s,
+                    flex-basis 0.3s ease 0s;
+
+        @media only screen and (min-width: $sm) {
+            flex-basis: 170px;
+            height: 51px;
+        }
+
+        @media only screen and (min-width: $md) {
+            flex-basis: 260px;
+            height: 78px;
+
+            .header_scroll & {
+                flex-basis: 200px;
+                height: 60px;
+            }
+        }
+    }
+
+    &__main {
+        flex: 0 1 auto;
+        display: flex;
+        flex-flow: row-reverse nowrap;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    &__registration {
+        display: none;
+        flex: 0 0 auto;
+
+        @media only screen and (min-width: $md) {
+            display: block;
+        }
+    }
+
+    &__contact {
+
+        @media only screen and (min-width: $sm) {
+            top: 85px; 
+        }
+        
+        @media only screen and (min-width: $md) {
+            position: static;
+            width: auto;
+            min-width: 0;
+            flex: 0 0 auto;
+            margin-right: 30px;
+            text-align: right;
+
+        }
+
+        @media only screen and (min-width: $lg) {
+            margin-right: 50px;
+        }
+    }
+
+    &__phone {
+        display: inline-block;
+        margin-bottom: 5px;
+        line-height: 16px;
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--color-primary);
+        text-decoration: underline solid transparent;
+        transition: text-decoration-color 0.3s ease;
+
+        @media only screen and (min-width: $sm) {
+            line-height: 24px;
+            font-size: 20px;
+        }
+
+        @media (any-hover: hover) {
+
+            &:hover {
+                text-decoration-color: var(--color-primary);
+            }
+        }
+    }
+
+    &__callback {
+        line-height: 15px;
+        font-size: 13px;
+        font-weight: 500;
+        color: #151515;
+        text-decoration-line: underline;
+        cursor: pointer;
+    }
+}
